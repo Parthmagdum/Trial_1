@@ -1,0 +1,17 @@
+# Netlify config - publish the frontend static folder
+# This tells Netlify to publish the `smart-admission-system/public` directory
+# and set basic headers.
+
+[build]
+  publish = "smart-admission-system/public"
+  command = "" # no build step required for vanilla HTML/CSS/JS
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = false
+
+[dev]
+  command = ""
+  port = 8888
